@@ -3,13 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Product.css';
 
-const Product = ({product, handleAddToCart}) => {
+const Product = ({ product, handleAddToCart }) => {
     // const {product, handleAddToCart} = props;
     const { name, img, seller, price, ratings } = product;
-    
+
     return (
         <div className='product'>
-            <img src={img} alt=""></img>
+            <img onError={(e) => {
+                e.target.setAttribute('src', 'https://www.publicdomainpictures.net/pictures/280000/nahled/not-found-image-15383864787lu.jpg')
+            }} src={img} alt=""></img>
             <div className='product-info'>
                 <p className='product-name'>{name}</p>
                 <p>Price: ${price}</p>
